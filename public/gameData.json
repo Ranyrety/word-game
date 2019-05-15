@@ -1,0 +1,41 @@
+{
+    "word": "dom",
+    "startCharacterIndex": 0,
+"letters":[
+    {
+        "character":"d",
+        "correctBackground":"#107030",
+        "id":"d01",
+        "wrongBackground":"#aa3020",
+        "correctClicked": false,
+        "incorrectClicked": false,
+        "nextCorrectLetter": 3
+    },
+    {
+        "character": "m",
+        "correctBackground": "#107030",
+        "id": "m01",
+        "wrongBackground": "#aa3020",
+        "correctClicked": false,
+        "incorrectClicked":false
+    },
+    {
+        "character": "g",
+        "correctBackground": "#107030",
+        "id": "g01",
+        "wrongBackground": "#aa3020",
+        "correctClicked": false,
+        "incorrectClicked": false,
+        "nextCorrectLetter": -1
+    },
+    {
+        "character": "o",
+        "correctBackground": "#107030",
+        "id": "o01",
+        "wrongBackground": "#aa3020",
+        "correctClicked": false,
+        "incorrectClicked": false,
+        "nextCorrectLetter": 1
+    }
+]
+}

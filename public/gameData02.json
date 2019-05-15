@@ -1,0 +1,104 @@
+{
+    "word": "wiaderko",
+    "startCharacterIndex": 2,
+    "letters": [
+        {
+            "character": "r",
+            "correctBackground": "#107030",
+            "id": "d01",
+            "wrongBackground": "#aa3020",
+            "correctClicked": false,
+            "incorrectClicked": false,
+            "nextCorrectLetter": 10
+        },
+        {
+            "character": "o",
+            "correctBackground": "#107030",
+            "id": "m01",
+            "wrongBackground": "#aa3020",
+            "correctClicked": false,
+            "incorrectClicked": false
+        },
+        {
+            "character": "w",
+            "correctBackground": "#107030",
+            "id": "g01",
+            "wrongBackground": "#aa3020",
+            "correctClicked": false,
+            "incorrectClicked": false,
+            "nextCorrectLetter": 4
+        },
+        {
+            "character": "h",
+            "correctBackground": "#107030",
+            "id": "o01",
+            "wrongBackground": "#aa3020",
+            "correctClicked": false,
+            "incorrectClicked": false,
+            "nextCorrectLetter": -1
+        },
+        {
+            "character": "i",
+            "correctBackground": "#107030",
+            "id": "o01",
+            "wrongBackground": "#aa3020",
+            "correctClicked": false,
+            "incorrectClicked": false,
+            "nextCorrectLetter": 6
+        },
+        {
+            "character": "b",
+            "correctBackground": "#107030",
+            "id": "o01",
+            "wrongBackground": "#aa3020",
+            "correctClicked": false,
+            "incorrectClicked": false,
+            "nextCorrectLetter": -1
+        },
+        {
+            "character": "a",
+            "correctBackground": "#107030",
+            "id": "o01",
+            "wrongBackground": "#aa3020",
+            "correctClicked": false,
+            "incorrectClicked": false,
+            "nextCorrectLetter": 8
+        },
+        {
+            "character": "e",
+            "correctBackground": "#107030",
+            "id": "o01",
+            "wrongBackground": "#aa3020",
+            "correctClicked": false,
+            "incorrectClicked": false,
+            "nextCorrectLetter": 0
+        },
+        {
+            "character": "d",
+            "correctBackground": "#107030",
+            "id": "o01",
+            "wrongBackground": "#aa3020",
+            "correctClicked": false,
+            "incorrectClicked": false,
+            "nextCorrectLetter": 7
+        },
+        {
+            "character": "l",
+            "correctBackground": "#107030",
+            "id": "o01",
+            "wrongBackground": "#aa3020",
+            "correctClicked": false,
+            "incorrectClicked": false,
+            "nextCorrectLetter": 1
+        },
+        {
+            "character": "k",
+            "correctBackground": "#107030",
+            "id": "o01",
+            "wrongBackground": "#aa3020",
+            "correctClicked": false,
+            "incorrectClicked": false,
+            "nextCorrectLetter": 1
+        }
+    ]
+}
