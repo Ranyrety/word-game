@@ -1,104 +1,61 @@
 {
     "word": "wiaderko",
-    "startCharacterIndex": 2,
+    "startCharacterIndex": 0,
     "letters": [
         {
             "character": "r",
-            "correctBackground": "#107030",
-            "id": "d01",
-            "wrongBackground": "#aa3020",
             "correctClicked": false,
-            "incorrectClicked": false,
-            "nextCorrectLetter": 10
+            "incorrectClicked": false
         },
         {
             "character": "o",
-            "correctBackground": "#107030",
-            "id": "m01",
-            "wrongBackground": "#aa3020",
             "correctClicked": false,
             "incorrectClicked": false
         },
         {
             "character": "w",
-            "correctBackground": "#107030",
-            "id": "g01",
-            "wrongBackground": "#aa3020",
             "correctClicked": false,
-            "incorrectClicked": false,
-            "nextCorrectLetter": 4
+            "incorrectClicked": false
         },
         {
             "character": "h",
-            "correctBackground": "#107030",
-            "id": "o01",
-            "wrongBackground": "#aa3020",
             "correctClicked": false,
-            "incorrectClicked": false,
-            "nextCorrectLetter": -1
+            "incorrectClicked": false
         },
         {
             "character": "i",
-            "correctBackground": "#107030",
-            "id": "o01",
-            "wrongBackground": "#aa3020",
             "correctClicked": false,
-            "incorrectClicked": false,
-            "nextCorrectLetter": 6
+            "incorrectClicked": false
         },
         {
             "character": "b",
-            "correctBackground": "#107030",
-            "id": "o01",
-            "wrongBackground": "#aa3020",
             "correctClicked": false,
-            "incorrectClicked": false,
-            "nextCorrectLetter": -1
+            "incorrectClicked": false
         },
         {
             "character": "a",
-            "correctBackground": "#107030",
-            "id": "o01",
-            "wrongBackground": "#aa3020",
             "correctClicked": false,
-            "incorrectClicked": false,
-            "nextCorrectLetter": 8
+            "incorrectClicked": false
         },
         {
             "character": "e",
-            "correctBackground": "#107030",
-            "id": "o01",
-            "wrongBackground": "#aa3020",
             "correctClicked": false,
-            "incorrectClicked": false,
-            "nextCorrectLetter": 0
+            "incorrectClicked": false
         },
         {
             "character": "d",
-            "correctBackground": "#107030",
-            "id": "o01",
-            "wrongBackground": "#aa3020",
             "correctClicked": false,
-            "incorrectClicked": false,
-            "nextCorrectLetter": 7
+            "incorrectClicked": false
         },
         {
             "character": "l",
-            "correctBackground": "#107030",
-            "id": "o01",
-            "wrongBackground": "#aa3020",
             "correctClicked": false,
-            "incorrectClicked": false,
-            "nextCorrectLetter": 1
+            "incorrectClicked": false
         },
         {
             "character": "k",
-            "correctBackground": "#107030",
-            "id": "o01",
-            "wrongBackground": "#aa3020",
             "correctClicked": false,
-            "incorrectClicked": false,
-            "nextCorrectLetter": 1
+            "incorrectClicked": false
         }
     ]
 }
