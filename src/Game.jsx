@@ -7,33 +7,28 @@ class Game extends React.Component {
         super(props)
         this.state = {
             loading: true,
-            word: "dom",
-            timeToFinishInSec: 10,
             correctGuessedLetter: 0,
-            bgColor: "#395501",
-            gameData: {},
+            gameData: {}
         }
 
-        fetch("gameData.json")
-            .then(response => response.json())
-            .then(json => {
-                let tmp = { gameData: json, nextCorrectLetter: json.startCharacterIndex, loading: false }
-                this.setState(tmp)
-            }
-            )
+        this.correctAudio = new Audio("clickSound.wav")
+        this.wrongAudio = new Audio("wrongClick.wav")
+
         this.onClick = this.onClick.bind(this);
-        this.playSound = this.playSound.bind(this)
-        this.playWrong = this.playWrong.bind(this)
     }
 
     componentDidMount() {
-
+        if(typeof this.state.gameData.word !== 'undefined' )
+            this.setState({loading: false})
+        else{
+            fetch("gameData.json").then(response => response.json()).then(json => this.setState({ gameData: json, loading: false }))
+        }
     }
 
     onClick(e) {
         const target = e.target;
-        let letterIndex = this.state.gameData.letters.findIndex(l => { return l.id === target.id })
-        if (!this.state.gameData.word[this.state.correctGuessedLetter].correctClicked) {
+        let letterIndex = this.state.gameData.letters.findIndex(l => { return l.character === target.innerText })
+        if (!this.state.gameData.letters[this.state.correctGuessedLetter].correctClicked) {
             if (target.innerText === this.state.gameData.word[this.state.correctGuessedLetter]) {
 
                 this.setState(prevState => {
@@ -45,39 +40,32 @@ class Game extends React.Component {
                     return prevState
                 }
                 )
-                this.playSound()
+                this.correctAudio.play()
             }
             else if (target.innerText !== this.state.gameData.word[this.state.correctGuessedLetter]) {
                 this.setState(prevState => {
                     prevState.gameData.letters[letterIndex].incorrectClicked = true
                     return prevState
                 })
-                this.playWrong()
+                this.wrongAudio.play()
             }
         }
     }
 
     componentDidUpdate() {
-        if (this.state.correctGuessedLetter === this.state.word.length) {
+        if(!this.state.loading){
+        if (this.state.correctGuessedLetter === this.state.gameData.word.length) {
             //add point set new word,
             this.setState({ word: "kotek", correctGuessedLetter: 0 })
         }
-    }
-
-    playSound() {
-        let audio = new Audio("clickSound.wav")
-        audio.play();
-    }
-
-    playWrong() {
-        let audio = new Audio("wrongClick.wav")
-        audio.play()
+        }
     }
 
     render() {
         return (
             this.state.loading ? <h1>loading</h1> :
                 <div>
+                    
                     <WordDisplay word={this.state.gameData.word} />
                     {
                         this.state.gameData.letters.map((o, id) =>
