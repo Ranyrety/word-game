@@ -20,8 +20,6 @@ class Letter extends React.Component{
 
 
     render() {
-        console.log(`letter:${this.props.letter}---correctClicked:${this.state.correctClicked} ---incorrectClicked:${this.state.incorrectClicked}`)
-
         let bgColor = "#395501";
         if (this.state.incorrectClicked) {
             bgColor = "#771010"

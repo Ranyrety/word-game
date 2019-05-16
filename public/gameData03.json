@@ -1,0 +1,61 @@
+{
+    "word": "ryba",
+    "startCharacterIndex": 0,
+    "letters": [
+        {
+            "character": "t",
+            "correctClicked": false,
+            "incorrectClicked": false
+        },
+        {
+            "character": "y",
+            "correctClicked": false,
+            "incorrectClicked": false
+        },
+        {
+            "character": "r",
+            "correctClicked": false,
+            "incorrectClicked": false
+        },
+        {
+            "character": "h",
+            "correctClicked": false,
+            "incorrectClicked": false
+        },
+        {
+            "character": "d",
+            "correctClicked": false,
+            "incorrectClicked": false
+        },
+        {
+            "character": "b",
+            "correctClicked": false,
+            "incorrectClicked": false
+        },
+        {
+            "character": "a",
+            "correctClicked": false,
+            "incorrectClicked": false
+        },
+        {
+            "character": "e",
+            "correctClicked": false,
+            "incorrectClicked": false
+        },
+        {
+            "character": "d",
+            "correctClicked": false,
+            "incorrectClicked": false
+        },
+        {
+            "character": "l",
+            "correctClicked": false,
+            "incorrectClicked": false
+        },
+        {
+            "character": "k",
+            "correctClicked": false,
+            "incorrectClicked": false
+        }
+    ]
+}

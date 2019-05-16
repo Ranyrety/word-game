@@ -17,20 +17,27 @@ class Game extends React.Component {
         this.onClick = this.onClick.bind(this);
     }
 
+
+    static getDerivedStateFromProps(nextProps, prevState){
+        if(nextProps.puzzle != prevState.gameData)
+        {
+            return { gameData: nextProps.puzzle, loading: nextProps.running}
+        }
+        if(nextProps.running != prevState.loading)
+            return {loading: nextProps.running}
+        return null
+    }
+
     componentDidMount() {
         if(typeof this.state.gameData.word !== 'undefined' )
-            this.setState({loading: false})
-        else{
-            fetch("gameData.json").then(response => response.json()).then(json => this.setState({ gameData: json, loading: false }))
-        }
+            this.setState({loading: true})
     }
 
     onClick(e) {
         const target = e.target;
         let letterIndex = this.state.gameData.letters.findIndex(l => { return l.character === target.innerText })
-        if (!this.state.gameData.letters[this.state.correctGuessedLetter].correctClicked) {
+        if (!this.state.gameData.letters[letterIndex].correctClicked) {
             if (target.innerText === this.state.gameData.word[this.state.correctGuessedLetter]) {
-
                 this.setState(prevState => {
                     if (prevState.gameData.letters[letterIndex].incorrectClicked) {
                         prevState.gameData.letters[letterIndex].incorrectClicked = false;
@@ -55,8 +62,8 @@ class Game extends React.Component {
     componentDidUpdate() {
         if(!this.state.loading){
         if (this.state.correctGuessedLetter === this.state.gameData.word.length) {
-            //add point set new word,
-            this.setState({ word: "kotek", correctGuessedLetter: 0 })
+            this.setState({correctGuessedLetter: 0})
+            this.props.onPuzzleCompleted(true)
         }
         }
     }

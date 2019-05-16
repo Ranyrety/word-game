@@ -10,20 +10,34 @@ class Menu extends React.Component{
         }
     }
 
-    render()
+    static getDerivedStateFromProps(nextProps, prevState){
+        if(prevState.started != nextProps.running)
+        {
+            return {started: nextProps.running}
+        }
+        return null
+    }
+
+    render(props)
     {
+        let style={
+            display: "block",
+            backgroundColor: "#124650",
+            border: 1
+        }
+
         return(
-        <ul>
+        <ul style={style}>
             <li>
             {
                 this.state.started ?
-            <button>Pause</button>
+            <button onClick={this.props.onPause}>Pause</button>
             :
-            <button>New Game</button>
+            <button onClick={this.props.onNewGame}>New Game</button>
             }
             </li>
             <li>
-                <button>Restart</button>
+                <button onClick={this.props.onRestart}>Restart</button>
             </li>
         </ul>
         )
