@@ -11,7 +11,7 @@ class Menu extends React.Component{
     }
 
     static getDerivedStateFromProps(nextProps, prevState){
-        if(prevState.started != nextProps.running)
+        if(prevState.started !== nextProps.running)
         {
             return {started: nextProps.running}
         }

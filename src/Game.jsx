@@ -21,7 +21,7 @@ class Game extends React.Component {
     static getDerivedStateFromProps(nextProps, prevState){
         if(nextProps.puzzle != prevState.gameData)
         {
-            return { gameData: nextProps.puzzle, loading: nextProps.running}
+            return {correctGuessedLetter:0, gameData: nextProps.puzzle, loading: nextProps.running}
         }
         if(nextProps.running != prevState.loading)
             return {loading: nextProps.running}
@@ -63,7 +63,7 @@ class Game extends React.Component {
         if(!this.state.loading){
         if (this.state.correctGuessedLetter === this.state.gameData.word.length) {
             this.setState({correctGuessedLetter: 0})
-            this.props.onPuzzleCompleted(true)
+            this.props.onPuzzleCompleted()
         }
         }
     }
@@ -71,8 +71,7 @@ class Game extends React.Component {
     render() {
         return (
             this.state.loading ? <h1>loading</h1> :
-                <div>
-                    
+                <div> 
                     <WordDisplay word={this.state.gameData.word} />
                     {
                         this.state.gameData.letters.map((o, id) =>

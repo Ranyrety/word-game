@@ -16,16 +16,17 @@ class Letter extends React.Component{
             if (nextProps.correctClicked !== prevState.correctClicked || nextProps.incorrectClicked !== prevState.incorrectClicked) {
                 return { correctClicked: nextProps.correctClicked, incorrectClicked: nextProps.incorrectClicked }
             }
+        return null
     }
 
 
     render() {
-        let bgColor = "#395501";
+        let bgColor = "#095567" 
         if (this.state.incorrectClicked) {
             bgColor = "#771010"
         }
         else if (this.state.correctClicked) {
-            bgColor = "#095567"
+            bgColor = "#395501"
         }
         let style = {
             width: "200px",
