@@ -47,6 +47,8 @@ class Game extends React.Component {
                     return prevState
                 }
                 )
+                this.correctAudio.pause();
+                this.correctAudio.currentTime = 0;
                 this.correctAudio.play()
             }
             else if (target.innerText !== this.state.gameData.word[this.state.correctGuessedLetter]) {
@@ -54,6 +56,8 @@ class Game extends React.Component {
                     prevState.gameData.letters[letterIndex].incorrectClicked = true
                     return prevState
                 })
+                this.wrongAudio.pause();
+                this.wrongAudio.currentTime = 0;
                 this.wrongAudio.play()
             }
         }
