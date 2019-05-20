@@ -14,7 +14,7 @@ class App extends React.Component{
       loading: true,
       currentLevel: 0,
       difficulty: 0,
-      puzzlesURL: ["gameData.json", 'gameData02.json', 'gameData03.json'],
+      puzzlesURL: ['/assets/data/gameData.json', '/assets/data/gameData02.json', '/assets/data/gameData03.json'],
       gameState: {
         running: false,
       },

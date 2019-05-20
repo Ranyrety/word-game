@@ -10,5 +10,5 @@ Install dependencies using npm. In project directory
  ##### Running project
 `npm start` 
 
-Starts app in development mode, open in browser at addres http://localhost:3000
+Starts app in development mode, open in browser at address http://localhost:3000
 
