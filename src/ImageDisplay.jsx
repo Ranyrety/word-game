@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './ImageDisplay.css'
 
 function ImageDisplay(props) {
   return (

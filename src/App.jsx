@@ -138,7 +138,7 @@ class App extends React.Component {
             <Menu running={this.state.gameState.running} onPause={this.onPauseClick}
               onNewGame={this.onNewGameClick} onRestart={this.onRestartClick} />
           </div>
-          <ImageDisplay url="assets/images/dom.png" />
+          <ImageDisplay url={this.state.gameData.imageUrl} />
           <div>
             <Modal show={this.state.showModal} handleClose={this.hideModal}>
               <p>Game currently paused, but since we still don't have timer this doesn't mean anything.</p>
