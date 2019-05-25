@@ -62,10 +62,6 @@ class App extends React.Component{
     this.setState({showModal: false})
   }
 
-  componentDidMount()
-  {
-  }
-
   loadNextPuzzle(){
     this.setState({loading: true})
     const level = this.getNextLevel(this.state.puzzlesURL, this.state.currentLevel)
@@ -102,15 +98,29 @@ class App extends React.Component{
   }
 
   onNewGameClick(e){
-    fetch(this.state.puzzlesURL[0]).then(response => response.json() ).then(
-      json => this.setState({gameData: json, loading: false, gameState:{running: true}})
+    fetch(this.state.puzzlesURL[0])
+    .then(response => response.json() )
+    .then(json => 
+      this.setState({
+        gameData: json,
+        loading: false, 
+        gameState: {
+          running: true
+        }
+      })
     ) 
   }
 
   onRestartClick(e){
     this.setState({ loading: true })
-    fetch(this.state.puzzlesURL[this.state.currentLevel]).then(response => response.json()).then(
-      json => this.setState({ gameData: json, loading: false,  gameState: { running: true }})
+    fetch(this.state.puzzlesURL[this.state.currentLevel])
+    .then(response => response.json())
+    .then(
+      json => this.setState({
+        gameData: json,
+        loading: false,
+        gameState: { running: true }}
+      )
     )
   }
 
@@ -129,7 +139,9 @@ class App extends React.Component{
         </div>
         <ImageDisplay url="assets/images/dom.png"/>
         <div>
-          <Modal show={this.state.showModal} handleClose={this.hideModal}> <p>Game currently paused, but since we still don't have timer this doesn't mean anything.</p></Modal>
+          <Modal show={this.state.showModal} handleClose={this.hideModal}>
+          <p>Game currently paused, but since we still don't have timer this doesn't mean anything.</p>
+          </Modal>
           <Game puzzle={this.state.gameData}
                          running={this.state.loading} onPuzzleCompleted={this.puzzleCompletedCallback}/>
         </div>
