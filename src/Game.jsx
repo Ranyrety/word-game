@@ -19,11 +19,11 @@ class Game extends React.Component {
 
 
     static getDerivedStateFromProps(nextProps, prevState){
-        if(nextProps.puzzle != prevState.gameData)
+        if(nextProps.puzzle !== prevState.gameData)
         {
             return {correctGuessedLetter:0, gameData: nextProps.puzzle, loading: nextProps.running}
         }
-        if(nextProps.running != prevState.loading)
+        if(nextProps.running !== prevState.loading)
             return {loading: nextProps.running}
         return null
     }
