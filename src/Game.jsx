@@ -1,5 +1,4 @@
 import React from 'react'
-import WordDisplay from './WordDisplay'
 import Letter from './Letter'
 
 class Game extends React.Component {
@@ -27,21 +26,19 @@ class Game extends React.Component {
     return null
   }
 
-  componentDidMount() {
-    if (typeof this.state.gameData.word !== 'undefined')
-      this.setState({ loading: true })
-  }
-
   onClick(e) {
     const target = e.target;
-    let letterIndex = this.state.gameData.letters.findIndex(l => { return l.character === target.innerText })
-    if (!this.state.gameData.letters[letterIndex].correctClicked) {
+    const clickedLetter = target.innerText
+    let clickedLetterIndex = this.state.gameData.letters.findIndex(
+      l => { return l.character === clickedLetter }
+    )
+    if (!this.state.gameData.letters[clickedLetterIndex].correctClicked) {
       if (target.innerText === this.state.gameData.word[this.state.correctGuessedLetter]) {
         this.setState(prevState => {
-          if (prevState.gameData.letters[letterIndex].incorrectClicked) {
-            prevState.gameData.letters[letterIndex].incorrectClicked = false;
+          if (prevState.gameData.letters[clickedLetterIndex].incorrectClicked) {
+            prevState.gameData.letters[clickedLetterIndex].incorrectClicked = false;
           }
-          prevState.gameData.letters[letterIndex].correctClicked = true
+          prevState.gameData.letters[clickedLetterIndex].correctClicked = true
           prevState.correctGuessedLetter += 1
           return prevState
         }
@@ -52,7 +49,7 @@ class Game extends React.Component {
       }
       else if (target.innerText !== this.state.gameData.word[this.state.correctGuessedLetter]) {
         this.setState(prevState => {
-          prevState.gameData.letters[letterIndex].incorrectClicked = true
+          prevState.gameData.letters[clickedLetterIndex].incorrectClicked = true
           return prevState
         })
         this.wrongAudio.pause();
@@ -73,9 +70,9 @@ class Game extends React.Component {
 
   render() {
     return (
+
       this.state.loading ? <h1>loading</h1> :
         <div>
-          <WordDisplay word={this.state.gameData.word} />
           {
             this.state.gameData.letters.map((o, id) =>
               <Letter key={id} id={o.id} letter={o.character} onClicked={this.onClick}
