@@ -1,15 +1,15 @@
 import React from 'react';
 import Game from './Game'
 import Menu from './Menu'
-import MainMenu from  './MainMenu'
+import MainMenu from './MainMenu'
 import ImageDisplay from './ImageDisplay'
 import Modal from './Modal'
 import './App.css';
 
-class App extends React.Component{
-  constructor(props){
+class App extends React.Component {
+  constructor(props) {
     super(props)
-  
+
     this.state = {
       loading: true,
       currentLevel: 0,
@@ -41,117 +41,118 @@ class App extends React.Component{
 
     this.setDifficulty = (diffLvl) => {
       console.error(`Difficulty is set to: ${diffLvl}. To bad we don't have data for different levels of difficulty.`)
-      this.setState({showDiffSetting: false})
+      this.setState({ showDiffSetting: false })
     }
 
   }
 
-  showDifficulty(){
-    this.setState({showDiffSetting: true})
+  showDifficulty() {
+    this.setState({ showDiffSetting: true })
   }
 
-  hideDifficulty(){
-    this.setState({showDiffSetting: false})
-  }
-  
-  showModal(){
-    this.setState({showModal: true})
+  hideDifficulty() {
+    this.setState({ showDiffSetting: false })
   }
 
-  hideModal(){
-    this.setState({showModal: false})
+  showModal() {
+    this.setState({ showModal: true })
   }
 
-  loadNextPuzzle(){
-    this.setState({loading: true})
+  hideModal() {
+    this.setState({ showModal: false })
+  }
+
+  loadNextPuzzle() {
+    this.setState({ loading: true })
     const level = this.getNextLevel(this.state.puzzlesURL, this.state.currentLevel)
-    if(level){
-    fetch(level)
-    .then(response => response.json())
-    .then(
-      json => this.setState(
-        (prevState) => {
-          return {
-            gameData: json,
-            loading: false,
-            currentLevel: prevState.currentLevel +1,
-            gameState: {
-              running: true
+    if (level) {
+      fetch(level)
+        .then(response => response.json())
+        .then(
+          json => this.setState(
+            (prevState) => {
+              return {
+                gameData: json,
+                loading: false,
+                currentLevel: prevState.currentLevel + 1,
+                gameState: {
+                  running: true
+                }
+              }
             }
-          }
-        }
-      )
-    )
-  }
-  else{
-    this.setState({gameState: {running: false}})
-  }
+          )
+        )
+    }
+    else {
+      this.setState({ gameState: { running: false } })
+    }
   }
 
   getNextLevel(levels, currentlyFinishedLevel) {
-    const nextLevel  = currentlyFinishedLevel + 1
-    if(levels.length > nextLevel) {
+    const nextLevel = currentlyFinishedLevel + 1
+    if (levels.length > nextLevel) {
       return levels[nextLevel]
     } else {
       return null
     }
   }
 
-  onNewGameClick(e){
+  onNewGameClick(e) {
     fetch(this.state.puzzlesURL[0])
-    .then(response => response.json() )
-    .then(json => 
-      this.setState({
-        gameData: json,
-        loading: false, 
-        gameState: {
-          running: true
-        }
-      })
-    ) 
+      .then(response => response.json())
+      .then(json =>
+        this.setState({
+          gameData: json,
+          loading: false,
+          gameState: {
+            running: true
+          }
+        })
+      )
   }
 
-  onRestartClick(e){
+  onRestartClick(e) {
     this.setState({ loading: true })
     fetch(this.state.puzzlesURL[this.state.currentLevel])
-    .then(response => response.json())
-    .then(
-      json => this.setState({
-        gameData: json,
-        loading: false,
-        gameState: { running: true }}
+      .then(response => response.json())
+      .then(
+        json => this.setState({
+          gameData: json,
+          loading: false,
+          gameState: { running: true }
+        }
+        )
       )
-    )
   }
 
-  onPauseClick(e){
+  onPauseClick(e) {
     this.showModal()
   }
 
-  render(){
-    return(
+  render() {
+    return (
 
-      this.state.gameState.running ? 
+      this.state.gameState.running ?
         <div>
-        <div>
-          <Menu  running={this.state.gameState.running} onPause={this.onPauseClick}
-                                       onNewGame={this.onNewGameClick} onRestart={this.onRestartClick}/>
-        </div>
-        <ImageDisplay url="assets/images/dom.png"/>
-        <div>
-          <Modal show={this.state.showModal} handleClose={this.hideModal}>
-          <p>Game currently paused, but since we still don't have timer this doesn't mean anything.</p>
-          </Modal>
-          <Game puzzle={this.state.gameData}
-                         running={this.state.loading} onPuzzleCompleted={this.puzzleCompletedCallback}/>
-        </div>
+          <div>
+            <Menu running={this.state.gameState.running} onPause={this.onPauseClick}
+              onNewGame={this.onNewGameClick} onRestart={this.onRestartClick} />
+          </div>
+          <ImageDisplay url="assets/images/dom.png" />
+          <div>
+            <Modal show={this.state.showModal} handleClose={this.hideModal}>
+              <p>Game currently paused, but since we still don't have timer this doesn't mean anything.</p>
+            </Modal>
+            <Game puzzle={this.state.gameData}
+              running={this.state.loading} onPuzzleCompleted={this.puzzleCompletedCallback} />
+          </div>
         </div>
         :
         <div>
-        <MainMenu onNewGame={this.onNewGameClick} difficultyVisible={this.state.showDiffSetting} 
-                        onSetDifficulty={this.setDifficulty} showChoseDifficulty={this.showDifficulty} 
-                        handleClose={this.hideDifficulty}/>
-        <Modal show={this.state.showModal} handleClose={this.hideModal}> <p>Data 1</p></Modal>
+          <MainMenu onNewGame={this.onNewGameClick} difficultyVisible={this.state.showDiffSetting}
+            onSetDifficulty={this.setDifficulty} showChoseDifficulty={this.showDifficulty}
+            handleClose={this.hideDifficulty} />
+          <Modal show={this.state.showModal} handleClose={this.hideModal}> <p>Data 1</p></Modal>
         </div>
     )
   }

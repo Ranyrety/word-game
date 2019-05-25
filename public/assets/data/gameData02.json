@@ -1,61 +1,61 @@
 {
-    "word": "wiaderko",
-    "startCharacterIndex": 0,
-    "letters": [
-        {
-            "character": "r",
-            "correctClicked": false,
-            "incorrectClicked": false
-        },
-        {
-            "character": "o",
-            "correctClicked": false,
-            "incorrectClicked": false
-        },
-        {
-            "character": "w",
-            "correctClicked": false,
-            "incorrectClicked": false
-        },
-        {
-            "character": "h",
-            "correctClicked": false,
-            "incorrectClicked": false
-        },
-        {
-            "character": "i",
-            "correctClicked": false,
-            "incorrectClicked": false
-        },
-        {
-            "character": "b",
-            "correctClicked": false,
-            "incorrectClicked": false
-        },
-        {
-            "character": "a",
-            "correctClicked": false,
-            "incorrectClicked": false
-        },
-        {
-            "character": "e",
-            "correctClicked": false,
-            "incorrectClicked": false
-        },
-        {
-            "character": "d",
-            "correctClicked": false,
-            "incorrectClicked": false
-        },
-        {
-            "character": "l",
-            "correctClicked": false,
-            "incorrectClicked": false
-        },
-        {
-            "character": "k",
-            "correctClicked": false,
-            "incorrectClicked": false
-        }
-    ]
+  "word": "wiaderko",
+  "startCharacterIndex": 0,
+  "letters": [
+    {
+      "character": "r",
+      "correctClicked": false,
+      "incorrectClicked": false
+    },
+    {
+      "character": "o",
+      "correctClicked": false,
+      "incorrectClicked": false
+    },
+    {
+      "character": "w",
+      "correctClicked": false,
+      "incorrectClicked": false
+    },
+    {
+      "character": "h",
+      "correctClicked": false,
+      "incorrectClicked": false
+    },
+    {
+      "character": "i",
+      "correctClicked": false,
+      "incorrectClicked": false
+    },
+    {
+      "character": "b",
+      "correctClicked": false,
+      "incorrectClicked": false
+    },
+    {
+      "character": "a",
+      "correctClicked": false,
+      "incorrectClicked": false
+    },
+    {
+      "character": "e",
+      "correctClicked": false,
+      "incorrectClicked": false
+    },
+    {
+      "character": "d",
+      "correctClicked": false,
+      "incorrectClicked": false
+    },
+    {
+      "character": "l",
+      "correctClicked": false,
+      "incorrectClicked": false
+    },
+    {
+      "character": "k",
+      "correctClicked": false,
+      "incorrectClicked": false
+    }
+  ]
 }

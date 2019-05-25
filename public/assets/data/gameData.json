@@ -1,26 +1,26 @@
 {
-    "word": "dom",
-    "startCharacterIndex": 0,
-"letters":[
+  "word": "dom",
+  "startCharacterIndex": 0,
+  "letters": [
     {
-        "character":"d",
-        "correctClicked": false,
-        "incorrectClicked": false
+      "character": "d",
+      "correctClicked": false,
+      "incorrectClicked": false
     },
     {
-        "character": "m",
-        "correctClicked": false,
-        "incorrectClicked":false
+      "character": "m",
+      "correctClicked": false,
+      "incorrectClicked": false
     },
     {
-        "character": "g",
-        "correctClicked": false,
-        "incorrectClicked": false
+      "character": "g",
+      "correctClicked": false,
+      "incorrectClicked": false
     },
     {
-        "character": "o",
-        "correctClicked": false,
-        "incorrectClicked": false
+      "character": "o",
+      "correctClicked": false,
+      "incorrectClicked": false
     }
-]
+  ]
 }
