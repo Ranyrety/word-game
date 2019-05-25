@@ -84,7 +84,10 @@ class App extends React.Component {
         )
     }
     else {
-      this.setState({ gameState: { running: false } })
+      this.setState({
+        currentLevel: 0,
+        gameState: { running: false }
+      })
     }
   }
 
