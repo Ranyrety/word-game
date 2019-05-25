@@ -14,7 +14,11 @@ class App extends React.Component{
       loading: true,
       currentLevel: 0,
       difficulty: 0,
-      puzzlesURL: ['./assets/data/gameData.json', './assets/data/gameData02.json', './assets/data/gameData03.json'],
+      puzzlesURL: [
+        './assets/data/gameData.json',
+        './assets/data/gameData02.json',
+        './assets/data/gameData03.json'
+      ],
       gameState: {
         running: false,
       },
@@ -64,9 +68,37 @@ class App extends React.Component{
 
   loadNextPuzzle(){
     this.setState({loading: true})
-    fetch(this.state.puzzlesURL[this.state.currentLevel + 1]).then(response => response.json()).then(
-      json => this.setState((prevState) => {return { gameData: json, loading: false, currentLevel: prevState.currentLevel +1,gameState: { running: true } }})
+    const level = this.getNextLevel(this.state.puzzlesURL, this.state.currentLevel)
+    if(level){
+    fetch(level)
+    .then(response => response.json())
+    .then(
+      json => this.setState(
+        (prevState) => {
+          return {
+            gameData: json,
+            loading: false,
+            currentLevel: prevState.currentLevel +1,
+            gameState: {
+              running: true
+            }
+          }
+        }
+      )
     )
+  }
+  else{
+    this.setState({gameState: {running: false}})
+  }
+  }
+
+  getNextLevel(levels, currentlyFinishedLevel) {
+    const nextLevel  = currentlyFinishedLevel + 1
+    if(levels.length > nextLevel) {
+      return levels[nextLevel]
+    } else {
+      return null
+    }
   }
 
   onNewGameClick(e){
