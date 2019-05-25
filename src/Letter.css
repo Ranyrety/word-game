@@ -12,5 +12,6 @@
   display: inline-block;
   margin: 15px;
   border: 1px;
-  border-radius: 200px
+  border-radius: 200px;
+  cursor: pointer;
 }
