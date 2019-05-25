@@ -1,7 +1,6 @@
 {
   "word": "dom",
   "imageUrl": "./assets/images/dom.png",
-  "startCharacterIndex": 0,
   "letters": [
     {
       "character": "d"
