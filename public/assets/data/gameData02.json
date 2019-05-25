@@ -4,59 +4,37 @@
   "startCharacterIndex": 0,
   "letters": [
     {
-      "character": "r",
-      "correctClicked": false,
-      "incorrectClicked": false
+      "character": "r"
     },
     {
-      "character": "o",
-      "correctClicked": false,
-      "incorrectClicked": false
+      "character": "o"
     },
     {
-      "character": "w",
-      "correctClicked": false,
-      "incorrectClicked": false
+      "character": "w"
     },
     {
-      "character": "h",
-      "correctClicked": false,
-      "incorrectClicked": false
+      "character": "h"
     },
     {
-      "character": "i",
-      "correctClicked": false,
-      "incorrectClicked": false
+      "character": "i"
     },
     {
-      "character": "b",
-      "correctClicked": false,
-      "incorrectClicked": false
+      "character": "b"
     },
     {
-      "character": "a",
-      "correctClicked": false,
-      "incorrectClicked": false
+      "character": "a"
     },
     {
-      "character": "e",
-      "correctClicked": false,
-      "incorrectClicked": false
+      "character": "e"
     },
     {
-      "character": "d",
-      "correctClicked": false,
-      "incorrectClicked": false
+      "character": "d"
     },
     {
-      "character": "l",
-      "correctClicked": false,
-      "incorrectClicked": false
+      "character": "l"
     },
     {
-      "character": "k",
-      "correctClicked": false,
-      "incorrectClicked": false
+      "character": "k"
     }
   ]
 }
