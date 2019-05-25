@@ -1,4 +1,5 @@
 import React from 'react'
+import './Letter.css'
 
 class Letter extends React.Component {
   constructor(props) {
@@ -29,24 +30,11 @@ class Letter extends React.Component {
       bgColor = "#395501"
     }
     let style = {
-      width: "200px",
-      height: "200px",
-      backgroundColor: bgColor,
-      color: "#ffffff",
-      fontSize: 80,
-      fontWeight: "bold",
-      textAlign: "center",
-      lineHeight: "200px",
-      verticalAlign: "middle",
-      padding: 10,
-      display: "inline-block",
-      margin: 15,
-      border: 1,
-      borderRadius: "200px"
+      backgroundColor: bgColor
     };
 
     return (
-      <div id={this.props.id} style={style} onClick={this.props.onClicked}>{this.props.letter}</div>
+      <div className="letter" id={this.props.id} style={style} onClick={this.props.onClicked}>{this.props.letter}</div>
     );
   }
 }
