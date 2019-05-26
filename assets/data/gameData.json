@@ -1,26 +1,19 @@
 {
-    "word": "dom",
-    "startCharacterIndex": 0,
-"letters":[
+  "word": "dom",
+  "imageUrl": "./assets/images/dom.png",
+  "letters": [
     {
-        "character":"d",
-        "correctClicked": false,
-        "incorrectClicked": false
+      "character": "d"
+      
     },
     {
-        "character": "m",
-        "correctClicked": false,
-        "incorrectClicked":false
+      "character": "m"
     },
     {
-        "character": "g",
-        "correctClicked": false,
-        "incorrectClicked": false
+      "character": "g"
     },
     {
-        "character": "o",
-        "correctClicked": false,
-        "incorrectClicked": false
+      "character": "o"
     }
-]
+  ]
 }
