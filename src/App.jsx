@@ -6,6 +6,12 @@ import ImageDisplay from './ImageDisplay'
 import Modal from './Modal'
 import './App.css';
 
+const puzzlesURL= [
+  './assets/data/gameData.json',
+  './assets/data/gameData02.json',
+  './assets/data/gameData03.json'
+]
+
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -14,11 +20,6 @@ class App extends React.Component {
       loading: true,
       currentLevel: 0,
       difficulty: 0,
-      puzzlesURL: [
-        './assets/data/gameData.json',
-        './assets/data/gameData02.json',
-        './assets/data/gameData03.json'
-      ],
       gameState: {
         running: false,
       },
@@ -64,7 +65,7 @@ class App extends React.Component {
 
   loadNextPuzzle() {
     this.setState({ loading: true })
-    const level = this.getNextLevel(this.state.puzzlesURL, this.state.currentLevel)
+    const level = this.getNextLevel(puzzlesURL, this.state.currentLevel)
     if (level) {
       fetch(level)
         .then(response => response.json())
@@ -101,7 +102,7 @@ class App extends React.Component {
   }
 
   onNewGameClick(e) {
-    fetch(this.state.puzzlesURL[0])
+    fetch(puzzlesURL[0])
       .then(response => response.json())
       .then(json =>
         this.setState({
@@ -116,7 +117,7 @@ class App extends React.Component {
 
   onRestartClick(e) {
     this.setState({ loading: true })
-    fetch(this.state.puzzlesURL[this.state.currentLevel])
+    fetch(puzzlesURL[this.state.currentLevel])
       .then(response => response.json())
       .then(
         json => this.setState({
