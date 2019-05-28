@@ -27,10 +27,12 @@ class Game extends React.Component {
   }
 
   onClick(e) {
-    const target = e.target;
-    const clickedLetterIndex = target.id
-    if (!this.state.gameData.letters[clickedLetterIndex].correctClicked) {
-      if (target.innerText === this.state.gameData.word[this.state.correctGuessedLetter]) {
+    const clickedLetterIndex = e.target.id
+    if (this.state.gameData.letters[clickedLetterIndex].correctClicked) {
+      return
+    }
+    else{
+       if (this.isLetterCorrect(clickedLetterIndex)) {
         this.setState(prevState => {
           if (prevState.gameData.letters[clickedLetterIndex].incorrectClicked) {
             prevState.gameData.letters[clickedLetterIndex].incorrectClicked = false;
@@ -44,7 +46,7 @@ class Game extends React.Component {
         this.correctAudio.currentTime = 0;
         this.correctAudio.play()
       }
-      else if (target.innerText !== this.state.gameData.word[this.state.correctGuessedLetter]) {
+       else {
         this.setState(prevState => {
           prevState.gameData.letters[clickedLetterIndex].incorrectClicked = true
           return prevState
@@ -54,6 +56,11 @@ class Game extends React.Component {
         this.wrongAudio.play()
       }
     }
+  }
+
+  isLetterCorrect(letterIndex){
+    const nextLetterIndex = this.state.correctGuessedLetter
+    return this.state.gameData.letters[letterIndex].character === this.state.gameData.word[nextLetterIndex]
   }
 
   componentDidUpdate() {
