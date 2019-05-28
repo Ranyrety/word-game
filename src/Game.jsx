@@ -28,10 +28,7 @@ class Game extends React.Component {
 
   onClick(e) {
     const target = e.target;
-    const clickedLetter = target.innerText
-    let clickedLetterIndex = this.state.gameData.letters.findIndex(
-      l => { return l.character === clickedLetter }
-    )
+    const clickedLetterIndex = target.id
     if (!this.state.gameData.letters[clickedLetterIndex].correctClicked) {
       if (target.innerText === this.state.gameData.word[this.state.correctGuessedLetter]) {
         this.setState(prevState => {
@@ -75,7 +72,7 @@ class Game extends React.Component {
         <div>
           {
             this.state.gameData.letters.map((o, id) =>
-              <Letter key={id} id={o.id} letter={o.character} onClicked={this.onClick}
+              <Letter key={id} id={id} letter={o.character} onClicked={this.onClick}
                 correctClicked={o.correctClicked} incorrectClicked={o.incorrectClicked} />
             )
           }
