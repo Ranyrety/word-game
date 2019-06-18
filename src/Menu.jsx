@@ -1,5 +1,5 @@
 import React from 'react'
-
+import "./Menu.css"
 
 class Menu extends React.Component {
   constructor(props) {
@@ -17,14 +17,10 @@ class Menu extends React.Component {
   }
 
   render(props) {
-    let style = {
-      display: "block",
-      backgroundColor: "#124650",
-      border: 1
-    }
+    
 
     return (
-      <ul style={style}>
+      <ul className="mainMenu">
         <li>
           {
             this.state.started ?
